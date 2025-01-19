@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff; /* Default light theme background */
+    background-color: #f3f2f2; /* Default light theme background */
     color: #000000; /* Default light theme text */
     display: flex;
     flex-direction: column;
@@ -46,22 +46,13 @@ body {
     transform: scale(1.1); /* Increase size on hover */
 }
 
-/* Specific hover effect for the "About" link */
-.slide-menu a[href="/about.html"]:hover {
-    color:  #c280ff;
-    transform: scale(1.15); /* Slightly larger animation for About link */
-}
-.slide-menu a[href="/skills.html"]:hover {
-    color:  #c280ff;
-    transform: scale(1.15); /* Slightly larger animation for About link */
-}
-.slide-menu a[href="/contact.html"]:hover {
-    color:  #c280ff;
-    transform: scale(1.15); /* Slightly larger animation for About link */
-}
+/* Hover effects for each link */
+.slide-menu a[href="/about.html"]:hover,
+.slide-menu a[href="/skills.html"]:hover,
+.slide-menu a[href="/contact.html"]:hover,
 .slide-menu a[href="/projects.html"]:hover {
-    color:  #c280ff;
-    transform: scale(1.15); /* Slightly larger animation for About link */
+    color: #c280ff;
+    transform: scale(1.15); /* Slightly larger animation for links */
 }
 
 .slide-menu.open {
@@ -84,24 +75,49 @@ body {
     display: block;
 }
 
+/* Dots Menu */
+.dots-menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
 .dots-menu button {
     font-size: 30px;
     background: none;
     border: none;
-    color: #333;
+    color: #333; /* Default dot color */
     cursor: pointer;
     padding: 5px;
 }
 
 .dots-menu button:hover {
-    color: #d5dae0;
+    color: #c280ff; /* Change color on hover for visibility */
 }
 
 /* Header Styles */
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+}
+
+header h1:hover {
+    color: #c280ff;
+}
+
 header p {
-    color: #000000; /* Default light theme text */
-    text-decoration: underline #c280ff;
+    color: #000000;
     font-size: 18px;
+    max-width: 800px; /* Optional: adjust based on your design */
+    margin: 15px auto; /* Adds spacing between paragraphs */
+    text-align: left; /* Align the text to the left for readability */
 }
 
 /* Theme Toggle Button */
@@ -145,9 +161,329 @@ body.dark .theme-toggle:hover {
     border-color: #c280ff; /* Dark theme button border */
 }
 
-body.dark header p{
+body.dark header p {
     color: #ffffff;
 }
-header h1:hover{
+/* Skill Section */
+.skills {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.skill {
+    margin-bottom: 30px;
+}
+
+.skill h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #c280ff; /* Color for heading */
+}
+
+.progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    width: 100%;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+.progress {
+    background-color: #c280ff;
+    height: 100%;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+}
+
+p {
+    font-size: 18px;
+    color: #000;
+    margin: 10px 0;
+}
+
+/* General Styles */
+.projects {
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    text-align: center;
+}
+
+.project-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
     color: #c280ff;
+}
+
+.project-card p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.project-card ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+
+.project-card li {
+    font-size: 14px;
+    color: #666;
+}
+
+.view-link {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #c280ff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.view-link:hover {
+    background-color: #9b56ff;
+}
+
+/* General Styles */
+.contact-form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.contact-form button {
+    background-color: #c280ff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #9b56ff;
+}
+
+/* Social Media Section */
+.social-media {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-media ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-media ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.social-media ul li a {
+    font-size: 18px;
+    color: #c280ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-media ul li a:hover {
+    color: #9b56ff;
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+}
+
+header h1:hover {
+    color: #c280ff;
+}
+
+header p {
+    color: #000000;
+    font-size: 18px;
+    max-width: 800px; /* Optional: adjust based on your design */
+    margin: 15px auto;
+    text-align: left; /* Align the text to the left for readability */
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background-color: transparent;
+    color: #000000; /* Default light theme text */
+    padding: 10px;
+    border: 2px solid #000000; /* Default border */
+    cursor: pointer;
+    font-size: 18px;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.theme-toggle:hover {
+    border-color: #c280ff;
+    color: #c280ff;
+}
+/* General Styles */
+.contact-info {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin: 15px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.contact-info ul li a:hover {
+    color: #c280ff;
+}
+
+.contact-info ul li .social-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+}
+
+header h1:hover {
+    color: #c280ff;
+}
+
+header p {
+    color: #000000;
+    font-size: 18px;
+    max-width: 800px; /* Optional: adjust based on your design */
+    margin: 15px auto;
+    text-align: left; /* Align the text to the left for readability */
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background-color: transparent;
+    color: #000000; /* Default light theme text */
+    padding: 10px;
+    border: 2px solid #000000; /* Default border */
+    cursor: pointer;
+    font-size: 18px;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.theme-toggle:hover {
+    border-color: #c280ff;
+    color: #c280ff;
+}
+/* Profile Image Styling */
+.profile-img-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Space between the image and the title */
+}
+
+.profile-img {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Ensure it’s a square */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the circle nicely */
 }
