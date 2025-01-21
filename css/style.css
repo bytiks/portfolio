@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    background: linear-gradient(135deg, #1e1e2f, #121212);
+    background: linear-gradient(135deg, #1e1e2f, #121212); /* Light theme gradient */
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
@@ -137,10 +137,11 @@ header p {
     color: #c280ff;
 }
 
-/* Dark Theme */
+
+/* Dark Theme Styles */
 body.dark {
-    background-color: #121212; /* Dark theme background */
-    color: #ffffff; /* Dark theme text */
+    background: linear-gradient(135deg, #1e1e2f, #121212); /* Dark theme gradient */
+    color: #ffffff; /* Dark theme text color */
 }
 
 body.dark .slide-menu {

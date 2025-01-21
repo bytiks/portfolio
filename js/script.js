@@ -10,8 +10,10 @@ const applyTheme = () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         body.classList.add('dark');
+        body.style.background = "linear-gradient(135deg, #1e1e2f, #121212)"; // Dark theme gradient
     } else {
         body.classList.remove('dark');
+        body.style.background = "linear-gradient(135deg, #f3f2f2, #ffffff)"; // Light theme gradient
     }
 };
 
@@ -39,10 +41,12 @@ overlay.addEventListener('click', () => {
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark'); // Toggle dark theme
 
-    // Save the user's theme preference to localStorage
+    // Update background gradient based on the current theme
     if (body.classList.contains('dark')) {
+        body.style.background = "linear-gradient(135deg, #1e1e2f, #121212)"; // Dark theme gradient
         localStorage.setItem('theme', 'dark');
     } else {
+        body.style.background = "linear-gradient(135deg, #f3f2f2, #ffffff)"; // Light theme gradient
         localStorage.setItem('theme', 'light');
     }
 });
