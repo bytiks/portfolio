@@ -318,6 +318,7 @@ p {
 
 /* General Styles */
 .contact-form {
+    
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
@@ -360,6 +361,7 @@ p {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
+    
 }
 
 .contact-form button:hover {
@@ -441,6 +443,22 @@ header p {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* View Project Button Styling */
+.view-link {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #c280ff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.view-link:hover {
+    background-color: #9b56ff;
 }
 
 .contact-info ul {
